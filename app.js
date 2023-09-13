@@ -50,7 +50,7 @@ function removeItems() {
   }
 
   rl.question('Enter the index of the item to remove: ', (index) => {
-    if (index >= 1 && index <= shoppingList.length) {
+    if (index >= 0 && index <= shoppingList.length) {
       const removedItem = shoppingList.splice(index - 1, 1);
       console.log(`Removed item: ${removedItem[0].name}`);
     } else {
