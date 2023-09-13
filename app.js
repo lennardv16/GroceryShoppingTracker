@@ -49,9 +49,9 @@ function removeItems() {
     return;
   }
 
-  rl.question('Enter the index of the item to remove: ', (itemIndex) => {
-    if (itemIndex >= 1 && itemIndex <= shoppingList.length) {
-      const removedItem = shoppingList.splice(itemIndex - 1, 1);
+  rl.question('Enter the index of the item to remove: ', (index) => {
+    if (index >= 1 && index <= shoppingList.length) {
+      const removedItem = shoppingList.splice(index - 1, 1);
       console.log(`Removed item: ${removedItem[0].name}`);
     } else {
       console.log('Invalid item index. No items were removed.');
@@ -68,10 +68,10 @@ function isBought() {
     return;
   }
 
-  rl.question('Enter the index of the item to mark as bought: ', (itemIndex) => {
-    if (itemIndex >= 0 && itemIndex <= shoppingList.length) {
-      shoppingList[itemIndex - 1].bought = true;
-      console.log(`Marked item as bought: ${shoppingList[itemIndex - 1].name}`);
+  rl.question('Enter the index of the item to mark as bought: ', (index) => {
+    if (index >= 0 && index <= shoppingList.length) {
+      shoppingList[index - 1].bought = true;
+      console.log(`Marked item as bought: ${shoppingList[index - 1].name}`);
     } else {
       console.log('Invalid item index. No items were marked as bought.');
     }
